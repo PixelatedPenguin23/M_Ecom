@@ -4,6 +4,7 @@ import Nav from "@components/Nav";
 import { Provider } from "react-redux";
 import { store } from "@redux/store";
 
+
 const inter = Inter({ subsets: ["latin"],weight:'700' });
 
 export const metadata = {
