@@ -1,8 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@components/Nav";
-import { Provider } from "react-redux";
-import { store } from "@redux/store";
 import ReduxP from "@components/ReduxP";
 
 
@@ -15,16 +13,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    
+    <ReduxP>
     <html lang="en">
-      <ReduxP>
+      
       <body className={`${inter.className} antialiased`}>
         <Nav/>
         <main className="px-40 mt-7">
         {children}
         </main>
       </body>
-      </ReduxP>
+      
     </html>
+    </ReduxP>
   );
 }
