@@ -3,14 +3,34 @@ state is for current stuff and action is for incoming
 so find is just for one and filter is for multiple
 
 **Having a strong foundation in Next.js, Redux, and Tailwind CSS can significantly increase your chances of landing a remote job, even without prior experience.**
-
 Here's why:
-
 * **In-Demand Skills:** These technologies are highly sought after in the web development industry, especially for building modern, scalable, and visually appealing applications.
 * **Remote Work Trend:** The trend towards remote work has been accelerating, offering more opportunities for developers with the right skills.
 * **Project-Based Learning:** If you've built personal projects using these technologies, you can showcase your abilities and increase your credibility.
 * **Online Portfolios:** Create a professional online portfolio to highlight your skills and projects. Platforms like GitHub and CodePen are popular choices.
 * **Networking:** Connect with other developers and potential employers on platforms like LinkedIn, Twitter, and online communities.
-
 While having experience is always beneficial, a solid understanding of these technologies and a willingness to learn can make you a strong candidate for remote job opportunities. Consider applying to companies that value potential and are open to training new hires.
 
+mige age default export koni, import har esmi bekhay mizari
+
+f you're using Windows Server 2008 R2 then there is an x64 and x86 version of PowerShell both of which have to have their execution policies set. Did you set the execution policy on both hosts?
+
+As an Administrator, you can set the execution policy by typing this into your PowerShell window:
+
+Set-ExecutionPolicy RemoteSigned
+For more information, see Using the Set-ExecutionPolicy Cmdlet.
+
+When you are done, you can set the policy back to its default value with:
+
+Set-ExecutionPolicy Restricted
+You may see an error:
+
+Access to the registry key
+'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell' is denied. 
+To change the execution policy for the default (LocalMachine) scope, 
+  start Windows PowerShell with the "Run as administrator" option. 
+To change the execution policy for the current user, 
+  run "Set-ExecutionPolicy -Scope CurrentUser".
+So you may need to run the command like this (as seen in comments):
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser

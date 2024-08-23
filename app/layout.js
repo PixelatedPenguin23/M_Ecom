@@ -3,6 +3,7 @@ import "./globals.css";
 import Nav from "@components/Nav";
 import { Provider } from "react-redux";
 import { store } from "@redux/store";
+import ReduxP from "@components/ReduxP";
 
 
 const inter = Inter({ subsets: ["latin"],weight:'700' });
@@ -16,14 +17,14 @@ export default function RootLayout({ children }) {
   return (
     
     <html lang="en">
-      <Provider store={store}>
+      <ReduxP>
       <body className={`${inter.className} antialiased`}>
         <Nav/>
         <main className="px-40 mt-7">
         {children}
         </main>
       </body>
-      </Provider>
+      </ReduxP>
     </html>
   );
 }
