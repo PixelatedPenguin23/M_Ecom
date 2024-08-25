@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@components/Nav";
 import ReduxP from "@components/ReduxP";
+import Footer from "@components/Footer";
+
 
 
 const inter = Inter({ subsets: ["latin"],weight:'700' });
@@ -13,17 +15,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ReduxP>
+    
+      
     <html lang="en">
       
       <body className={`${inter.className} antialiased`}>
+      <ReduxP>
         <Nav/>
         <main className="px-40 mt-7">
         {children}
         </main>
+        <Footer/>
+        </ReduxP>
       </body>
       
     </html>
-    </ReduxP>
+    
+   
   );
 }

@@ -14,9 +14,9 @@ const Nav = () => {
         <p className='font-serif font-extrabold'>MEHRAB<br/> ECOM</p>
       </div>
       
-      <div className='flex flex-row justify-center items-center gap-20 text-center text-lg ml-5'>
-        <Link className={` ${path==='/'?' opacity-100 transition-all text-xl':' transition-all opacity-30 text-black' }`} href={'/'}>Home</Link>
-        <Link className={` ${path==='/items'?' opacity-100 transition-all text-xl':' transition-all opacity-30 text-black' }`} href={'/items'}>Collection</Link>
+      <div className='flex flex-row justify-center items-center h-full my-auto gap-20 text-center ml-5'>
+        <Link className={` ${path==='/'?' opacity-100 transition-all text-3xl ':' transition-all opacity-30 text-black text-2xl ' } `} href={'/'}>Home</Link>
+        <Link className={` ${path==='/items'?' opacity-100 transition-all text-3xl ':' transition-all opacity-30 text-black text-2xl' } `} href={'/items'}>Collection</Link>
       </div>
       
       <div className='flex flex-row items-center relative gap-7'>
