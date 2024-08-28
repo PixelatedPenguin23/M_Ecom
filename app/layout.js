@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} antialiased`}>
       <ReduxP>
         <Nav/>
-        <main className="px-40 mt-7">
+        <main className="px-40 mt-7 min-h-screen">
         {children}
         </main>
         <Footer/>

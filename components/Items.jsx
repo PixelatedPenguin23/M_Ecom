@@ -13,22 +13,41 @@ const Shop = () => {
     dispatch(addC(item))
   }
   return (
-    <div>
-      <h1>SHOP</h1>
-      <ul>
-        {items.map((item)=>(
-          <li key={item.id}>
-            <p>{item.name}</p>
-            <p>{item.price}</p>
-            <div>
-              {item.image.map((img,index)=>(
-                <Image src={img} key={index} width={40} height={40} alt='k'/>
-              ))}
-            </div>
-            <button onClick={()=>handleAdd(item)}>ADD</button>
-          </li>
-        ))}
-      </ul>
+    <div className='flex flex-row'>
+      {/**Menu */}
+      <div className='flex flex-col gap-5 mt-14'>
+        <h2 className='text-2xl'>Filters</h2>
+        <div  className='p-3 gap-3 border rounded-sm min-w-60 flex flex-col'>
+          <h3 className=''>CATEGORIES</h3>
+          <p className='flex gap-2 font-sans font-normal'>
+            <input type='checkbox'/>Men
+          </p>
+          <p className='flex gap-2 font-sans font-normal'>
+            <input type='checkbox'/>Women
+          </p>
+          <p className='flex gap-2 font-sans font-normal'>
+            <input type='checkbox'/>Kids
+          </p>
+        </div>
+        
+        <div className='p-3 gap-3 border rounded-sm min-w-60 flex flex-col'>
+        <h3 className=''>Type</h3>
+          <p className='flex gap-2 font-sans font-normal'>
+            <input type='checkbox'/>Topwear
+          </p>
+          <p className='flex gap-2 font-sans font-normal'>
+            <input type='checkbox'/>Bottomwear
+          </p>
+          <p className='flex gap-2 font-sans font-normal'>
+            <input type='checkbox' />Winterwear
+          </p>
+        </div>
+      </div>
+      {/**Right */}
+      <div>
+        
+      </div>
+
     </div>
   )
 }
