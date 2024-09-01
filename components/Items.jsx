@@ -12,6 +12,7 @@ const Shop = () => {
   const items=useSelector(all)
   const dispatch=useDispatch()
   const [category,setcategory]=useState([])
+  const [subCategory,setsubCategory]=useState([])
   const [type,settype]=useState([])
 
   const [filtered,setFiltered]=useState([])
@@ -23,14 +24,30 @@ const Shop = () => {
       setcategory(prev=>[...prev,e.target.value])
     }
   }
+  const toggleS=(e)=>{
+    if (subCategory.includes(e.target.value)) {
+      setsubCategory(prev=>prev.filter(f=>f!==e.target.value))
+    } else {
+      setsubCategory(prev=>[...prev,e.target.value])
+    }
+  }
+
+  const applyF=()=>{
+    let allx=items.slice()
+    if(category.length>0){
+      allx=allx.filter(e=>category.includes(e.category))
+    }
+    if(subCategory.length>0){
+      allx=allx.filter(e=>subCategory.includes(e.subCategory))
+    }
+    setFiltered(allx)
+  }
 
   useEffect(()=>{
-    setFiltered(items)
-  },[])
+    applyF()
+  },[category,subCategory])
 
-  useEffect(()=>{
-    console.log(category)    
-  },[category])
+
 
   return (
     <div className='flex flex-row w-full'>
@@ -53,13 +70,13 @@ const Shop = () => {
         <div className='p-3 gap-3 border rounded-sm min-w-60 flex flex-col'>
         <h3 className=''>Type</h3>
           <p className='flex gap-2 font-sans font-normal'>
-            <input type='checkbox'/>Topwear
+            <input type='checkbox' value={'Topwear'} onChange={toggleS}/>Topwear
           </p>
           <p className='flex gap-2 font-sans font-normal'>
-            <input type='checkbox'/>Bottomwear
+            <input type='checkbox' value={'Bottomwear'} onChange={toggleS}/>Bottomwear
           </p>
           <p className='flex gap-2 font-sans font-normal'>
-            <input type='checkbox' />Winterwear
+            <input type='checkbox' value={'Winterwear'} onChange={toggleS}/>Winterwear
           </p>
         </div>
       </div>
